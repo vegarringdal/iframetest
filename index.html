@@ -27,9 +27,12 @@
         document.addEventListener("message", (e) => {
             const content = document.getElementById("content");
             content.textContent = e.data;
+            console.log("iframe message recived", e);
         });
         const btn = document.getElementById("button");
         btn.addEventListener("click", () => {
+            console.log("iframe click", window.opener);
+            console.log("iframe click", window.parent);
             if (window.opener) {
                 window.opener.postMessage({
                     type: "iframe-something",
