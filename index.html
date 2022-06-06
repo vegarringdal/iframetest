@@ -39,6 +39,12 @@
                     data: { something: "cool" }
                 });
             }
+            if (window.parent) {
+                window.parent.postMessage({
+                    type: "iframe-something",
+                    data: { something: "cool" }
+                });
+            }
         });
     </script>
 </html>
