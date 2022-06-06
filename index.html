@@ -37,10 +37,10 @@
                 window.opener.postMessage("opener", "*");
             }
             if (window.parent) {
-               window.parent.postMessage("parent", "*");
+               window.parent.postMessage({type:"parent", data:{somthing:1}, "*");
             }
              if (window.top) {
-                window.parent.postMessage("top", "*");
+                window.parent.postMessage({type:"parent", data:{somthing:1}, "*");
             }
         });
     </script>
