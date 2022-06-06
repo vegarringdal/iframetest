@@ -34,16 +34,13 @@
             console.log("iframe click", window.opener);
             console.log("iframe click", window.parent);
             if (window.opener) {
-                window.opener.postMessage({
-                    type: "iframe-something",
-                    data: { something: "cool" }
-                });
+                window.opener.postMessage("opener", "*");
             }
             if (window.parent) {
-                window.parent.postMessage({
-                    type: "iframe-something",
-                    data: { something: "cool" }
-                });
+               window.parent.postMessage("parent", "*");
+            }
+             if (window.top) {
+                window.parent.postMessage("top", "*");
             }
         });
     </script>
