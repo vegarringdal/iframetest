@@ -46,7 +46,7 @@
                 window.parent.postMessage({type:"top", data:{somthing:1}}, "*");
             }
             
-            window.parent.postMessage({type:"main", data:{somthing:1}}, "*");
+            window.postMessage({type:"main", data:{somthing:1}}, "*");
         });
     </script>
 </html>
